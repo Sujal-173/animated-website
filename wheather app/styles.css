@@ -14,6 +14,50 @@ body {
     height: 100vh;
 }
 
+body h1{
+    margin-bottom: 2vh;
+}
+
+#cityInput {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#getWeatherBtn {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
 #app {
     text-align: center;
+}
+
+#weatherResult {
+    height: 35vh;
+    width: 60vh;
+    background-color: antiquewhite;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-radius: 10px;
+    font-size: 3.5vh;
+    color: black;
+}
+
+#weatherResult h2 {
+    margin: 10px;
+    font-size: 4vh;
+    text-decoration: underline;
+}
+
+#weatherResult h3 {
+    margin: 2vh;
+    font-size: 1rem;
 }
