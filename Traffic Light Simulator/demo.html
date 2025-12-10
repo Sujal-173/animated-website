@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light Simulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .traffic-light {
+            width: 100px;
+            background: #333;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .light {
+            width: 60px;
+            height: 60px;
+            background: #111;
+            margin: 15px auto;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .red.active {
+            background: red;
+            opacity: 1;
+        }
+
+        .yellow.active {
+            background: yellow;
+            opacity: 1;
+        }
+
+        .green.active {
+            background: #00ff00;
+            opacity: 1;
+        }
+
+        .controls button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            margin: 10px auto;
+            background: #444;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .controls button:hover {
+            background: #666;
+        }
+
+        .manual.hidden {
+            display: none;
+        }
+
+        .manual button {
+            width: 120px;
+            padding: 8px;
+            margin: 5px;
+            background: #555;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .road {
+            margin-top: 60px;
+            width: 100%;
+            height: 120px;
+            background: #333;
+            position: relative;
+        }
+
+        .car {
+            width: 80px;
+            height: 40px;
+            background: orange;
+            border-radius: 5px;
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            transition: left 2s linear;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Traffic Light Simulator</h1>
+
+    <div class="container">
+
+        <div class="traffic-light">
+            <div id="red" class="light red"></div>
+            <div id="yellow" class="light yellow"></div>
+            <div id="green" class="light green"></div>
+        </div>
+
+        <div class="controls">
+            <button id="autoBtn">Auto Mode</button>
+            <button id="manualBtn">Manual Mode</button>
+            <button id="emergencyBtn">Emergency Mode</button>
+
+            <div id="manualControls" class="manual hidden">
+                <button data-light="red">Red</button>
+                <button data-light="yellow">Yellow</button>
+                <button data-light="green">Green</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="road">
+        <div id="car" class="car"></div>
+    </div>
+
+    <script>
+        let currentMode = "auto";
+        let autoInterval = null;
+
+        const red = document.getElementById("red");
+        const yellow = document.getElementById("yellow");
+        const green = document.getElementById("green");
+        const car = document.getElementById("car");
+
+        const manualControls = document.getElementById("manualControls");
+
+        function setLight(color) {
+            red.classList.remove("active");
+            yellow.classList.remove("active");
+            green.classList.remove("active");
+
+            if (color === "red") red.classList.add("active");
+            if (color === "yellow") yellow.classList.add("active");
+            if (color === "green") {
+                green.classList.add("active");
+                moveCar();
+            } else {
+                stopCar();
+            }
+        }
+
+        function moveCar() {
+            car.style.left = "80%";
+        }
+
+        function stopCar() {
+            car.style.left = "0%";
+        }
+
+        function startAutoMode() {
+            clearInterval(autoInterval);
+            let sequence = ["red", "yellow", "green"];
+            
+            let index = 0;
+            let x = 0;
+            
+            setLight(sequence[index]);
+            
+            autoInterval = setInterval(() => {
+                index = (index + 1) % sequence.length;
+                // console.log(sequence[index]);
+                // console.log(index);
+                console.log(x);
+                x++;
+                setLight(sequence[index]);
+            }, 5000);
+        }
+
+        function enableManualMode() {
+            clearInterval(autoInterval);
+            manualControls.classList.remove("hidden");
+        }
+
+        function emergencyMode() {
+            clearInterval(autoInterval);
+            manualControls.classList.add("hidden");
+            setLight("green");
+        }
+
+        // Button events
+        document.getElementById("autoBtn").onclick = () => {
+            currentMode = "auto";
+            manualControls.classList.add("hidden");
+            startAutoMode();
+        };
+
+        document.getElementById("manualBtn").onclick = () => {
+            currentMode = "manual";
+            enableManualMode();
+        };
+
+        document.getElementById("emergencyBtn").onclick = () => {
+            currentMode = "emergency";
+            emergencyMode();
+        };
+
+        // Manual buttons
+        document.querySelectorAll("[data-light]").forEach(btn => {
+            btn.onclick = () => {
+                const color = btn.getAttribute("data-light");
+                setLight(color);
+            };
+        });
+
+        // Start in auto mode by default
+        // startAutoMode();
+
+    </script>
+</body>
+
+</html>

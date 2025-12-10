@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Light Simulator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Traffic Light Simulator</h1>
+    <div class="container">
+      <div class="traffic-light">
+        <div id="red" class="light red"></div>
+        <div id="yellow" class="light yellow"></div>
+        <div id="green" class="light green"></div>
+        <div id="counter" class="counter">5</div>
+      </div>
+      <div class="controls">
+        <button id="autoBtn">Auto Mode</button>
+        <button id="manualBtn">Manual Mode</button>
+        <button id="emergencyBtn">Emergency Mode</button>
+        <div id="manualControls" class="manual hidden">
+          <button data-light="red">Red</button>
+          <button data-light="yellow">Yellow</button>
+          <button data-light="green">Green</button>
+        </div>
+      </div> 
+    </div>
+    <div class="road">
+      <div class="car">
+        
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

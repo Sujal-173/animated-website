@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #212121;
+    text-align: center;
+    padding-top: 20px;
+    color: #fff;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.traffic-light {
+    background-color: #333;
+    width: 100px;
+    border-radius: 20px;
+}
+
+.light {
+    width: 60px;
+    height: 60px;
+    background: #111;
+    margin: 15px auto;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.counter{
+    width: 60px;
+    height: 60px;
+    background: #111;
+    margin: 15px auto;
+    border-radius: 50%;
+    opacity: 0.5;
+    font-size:3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+
+
+.red {
+    background-color: red;
+    opacity: 1;
+}
+
+.yellow {
+    background-color: yellow;
+    opacity: 1;
+}
+
+.green {
+    background-color: rgb(5, 255, 5);
+    opacity: 1;
+}
+
+.controls button {
+    display: block;
+    width: 150px;
+    padding: 10px;
+    margin: 10px auto;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background: #666;
+}
+
+.manual.hidden {
+    display: none;
+}
+
+.manual button {
+    width: 120px;
+    padding: 8px;
+    margin: 5px;
+    background: #555;
+    color: white;
+    border-radius: 5px;
+}
+
+.road{
+    height: 10vh;
+    width: 100%;
+    background-color: black;
+    margin: auto;
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+} 
+
+.car{
+    height: 50px;
+    width: 12%;
+    background-color: rgb(209, 209, 8);
+    box-shadow: 1px 0 2px 2px rgb(109, 109, 2);
+    position: absolute;
+    top: 11px;
+    left: 0px;
+    transition: left 2s linear;
+}

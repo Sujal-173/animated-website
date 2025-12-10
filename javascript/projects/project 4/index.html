@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fun number guessing game where you try to guess a random number between 1 and 100 in 10 attempts.">
+    <meta name="keywords" content="number guessing game, guess the number, javascript game">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 3D canvas container (full screen) -->
+    <div id="three-container" aria-hidden="true"></div>
+
+    <header>
+        <div class="header-row">
+            <h1>Number Guessing Game</h1>
+            <div class="header-actions">
+                <button id="startTour" class="button small">Take a Tour</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- UI overlay (glass panel) -->
+        <div class="game-container overlay">
+            <div class="instructions">
+                <p>Try and guess a random number between 1 and 100.</p>
+                <p>You have 10 attempts to guess the right number.</p>
+            </div>
+            <form class="form">
+                <label for="guessfield">Guess a number:</label>
+                <input type="number" id="guessfield" class="guessfield" min="1" max="100" required>
+                <button type="submit" id="subt" class="guesssubmit">Submit Guess</button>
+            </form>
+            <div class="resultparas">
+                <p>Previous guesses: <span class="guesses"></span></p>
+                <p class="lorh"></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Number Guessing Game. Built with JavaScript.</p>
+    </footer>
+    <!-- Three.js (UMD build) -->
+    <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+    <!-- optional controls for development (kept off by default) -->
+    <script src="https://unpkg.com/three@0.152.2/examples/js/controls/OrbitControls.js"></script>
+    <!-- confetti (small lib) -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <!-- postprocessing and shaders (UMD examples) -->
+    <script src="https://unpkg.com/three@0.152.2/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://unpkg.com/three@0.152.2/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://unpkg.com/three@0.152.2/examples/js/postprocessing/UnrealBloomPass.js"></script>
+    <script src="https://unpkg.com/three@0.152.2/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://unpkg.com/three@0.152.2/examples/js/shaders/FXAAShader.js"></script>
+    <!-- local 3D scene script -->
+    <script src="three-scene.js"></script>
+    <!-- guided tour -->
+    <script src="tour.js"></script>
+    <!-- game logic (uses sceneAPI hooks if available) -->
+    <script src="script.js"></script>
+</body>
+</html>

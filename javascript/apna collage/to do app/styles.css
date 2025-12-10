@@ -1,0 +1,15 @@
+body{
+    justify-content: center;
+    text-align : center;
+}
+
+ul{
+    display: inline-block;
+}
+
+button{
+    display: inline-block;
+    margin: 10x;
+    margin-left: 10px;
+}
+

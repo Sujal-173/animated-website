@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Image Gallery</title>
+</head>
+<body>
+    <header class="topbar">
+        <h1><u>Image Gallery</u></h1>
+        <div class="controls">
+            <div class="filters">
+                <button class="filter-btn" data-filter="All">All</button>
+                <button class="filter-btn" data-filter="Nature">Nature</button>
+                <button class="filter-btn" data-filter="People">People</button>
+                <button class="filter-btn" data-filter="City">City</button>
+                <div class="effect">
+                    <div class="filter-select-wrap"></div>
+                    <select id="sel-effect">
+                        <option selected disabled>Select filter</option>
+                        <option value="normal" class="effect-btn">Normal</option>
+                        <option value="grayscale" class="effect-btn">Grayscale</option>
+                        <option value="sepia" class="effect-btn">Sepia</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="gallery" id="gallery">
+            <div class="gallery-item" data-index="0" data-category="nature">
+                <img src="https://picsum.photos/id/1015/800/600" alt="Nature 1" />
+            </div>
+            <div class="gallery-item" data-index="1" data-category="nature">
+                <img src="https://picsum.photos/id/1016/800/600" alt="Nature 2" />
+            </div>
+            <div class="gallery-item" data-index="2" data-category="nature">
+                <img src="https://picsum.photos/id/1020/800/600" alt="Nature 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="people">
+                <img src="https://plus.unsplash.com/premium_photo-1675791188810-3a01768c1e2f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVvcGxlfGVufDB8fDB8fHww" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="3" data-category="city">
+                <img src="https://picsum.photos/id/1003/800/600" alt="City 1" />
+            </div>
+            <div class="gallery-item" data-index="4" data-category="people">
+                <img src="https://picsum.photos/id/1011/800/600" alt="City 2" />
+            </div>
+            <div class="gallery-item" data-index="5" data-category="people">
+                <img src="https://picsum.photos/id/1012/800/600" alt="City 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="Nature">
+                <img src="https://plus.unsplash.com/premium_photo-1673292293042-cafd9c8a3ab3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmF0dXJlfGVufDB8fDB8fHww" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="6" data-category="people">
+                <img src="https://picsum.photos/id/1005/800/600" alt="People 1" />
+            </div>
+            <div class="gallery-item" data-index="7" data-category="people">
+                <img src="https://picsum.photos/id/1001/800/600" alt="People 2" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="people">
+                <img src="https://media.istockphoto.com/id/1457546193/photo/sea-of-crowd.webp?a=1&b=1&s=612x612&w=0&k=20&c=orIxINFbClvxvdJnT5Qcg-u4QQGvqTrEsWG60q86_k4=" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="Nature">
+                <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJlfGVufDB8fDB8fHww" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="Nature">
+                <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJlfGVufDB8fDB8fHww" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="Nature">
+                <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bmF0dXJlfGVufDB8fDB8fHww" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="people">
+                <img src="https://media.istockphoto.com/id/1197798905/photo/man-waiting-for-transportation-during-rush-hour.webp?a=1&b=1&s=612x612&w=0&k=20&c=iNuyVq54fX3k1wPkkeQBwNLEbnGxcIqarOY03HpGjXE=" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="people">
+                <img src="https://plus.unsplash.com/premium_photo-1661895081205-791c94434c78?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVvcGxlfGVufDB8fDB8fHww" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="city">
+                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="city">
+                <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="city">
+                <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="People 3" />
+            </div>
+            <div class="gallery-item" data-index="8" data-category="city">
+                <img src="https://images.unsplash.com/photo-1496871455396-14e56815f1f4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNpdHl8ZW58MHx8MHx8fDA%3D" alt="People 3" />
+            </div>
+        </div>
+    </main>
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous">&#10094;</button>
+        <img class="lightbox-img" id="lightbox-img" alt="" />
+        <button class="lightbox-next" aria-label="Next">&#10095;</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

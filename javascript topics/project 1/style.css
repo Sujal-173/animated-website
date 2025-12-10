@@ -1,0 +1,31 @@
+*{ 
+   justify-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+body{
+   background-color: aliceblue;
+}
+.button{
+    height: 150px;
+    width: 150px;
+    border: 2px solid black;
+}
+
+div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#grey{
+   background-color: grey;
+}
+#white{
+   background-color: white;
+}
+#yellow{
+   background-color: yellow;
+}
+#blue{
+   background-color: blue;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>javascript</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <button id="clear">clear</button>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const saydate = function() {
+            console.log('hello', Date.now());
+        };
+
+        const startBtn = document.getElementById('start');
+        const stopBtn = document.getElementById('stop');
+        const clrBtn = document.getElementById('clear');
+
+        let intervalId = null;
+
+        startBtn.addEventListener('click', function() {
+            if (intervalId !== null) return;
+            intervalId = setInterval(saydate, 1000);
+        });
+
+        stopBtn.addEventListener('click', function() {
+            if (intervalId === null) return;
+            clearInterval(intervalId);
+            intervalId = null;
+        });
+        clrBtn.addEventListener('click', function() {
+            console.clear();
+        });
+    });
+</script>
+</html>

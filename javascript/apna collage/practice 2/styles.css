@@ -1,0 +1,12 @@
+body{
+    text-align: center;
+}
+
+div{
+    margin: auto;
+    margin-top: 40px;
+    width: 400px;
+    height: 100px;
+    border: 2px solid black;
+    font-weight: 600;
+}

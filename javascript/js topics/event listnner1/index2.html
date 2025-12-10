@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            max-width: 300px;
+            max-height: 300px;
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="image" name="image" accept="image/*">
+    <img id="preview" src="" alt="Image Preview" />
+    
+    <script>
+        let input = document.getElementById("image");
+        let img = document.getElementById("preview");
+        
+        input.addEventListener("change", function(){
+            let file = this.files[0];
+            if(file){
+                let reader = new FileReader();
+                reader.onload = function(event){
+                    img.setAttribute("src", event.target.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+        console.dir(input)
+        console.dir(img)
+    </script>
+</body>
+</html>
